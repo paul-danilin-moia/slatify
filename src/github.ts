@@ -64,7 +64,7 @@ export function getWorkflowUrls(): WorkflowUrl {
     result.action = `${result.event}/checks`;
   } else if (isWorkflowDispatch()) {
     const runId = context.runId;
-    result.action = `${repoUrl}/actions/runs/${runId}`
+    result.action = `${repoUrl}/actions/runs/${runId}`;
   } else {
     result.action = `${repoUrl}/commit/${context.sha}/checks`;
   }
