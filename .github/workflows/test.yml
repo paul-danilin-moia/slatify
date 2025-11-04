@@ -11,7 +11,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Setup workspace
         run: yarn install --frozen-lockfile
