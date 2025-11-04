@@ -105,7 +105,7 @@ describe('Webhook Payload Tests', () => {
         url: 'https://lazy-actions'
       }
     }
-  };
+  } as const;
 
   test('Mention needs always', () => {
     expect(Slack.isMention('always', 'test')).toBe(true);
@@ -289,7 +289,7 @@ describe('Post Message Tests', () => {
         payload
       );
     } catch (err) {
-      expect(err.message).toBe('Failed to post message to Slack');
+      expect(err).toHaveProperty('message', 'Failed to post message to Slack');
     }
   });
 });
