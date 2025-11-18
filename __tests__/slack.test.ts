@@ -105,7 +105,7 @@ describe('Webhook Payload Tests', () => {
         url: 'https://lazy-actions'
       }
     }
-  };
+  } as const;
 
   test('Mention needs always', () => {
     expect(Slack.isMention('always', 'test')).toBe(true);
@@ -253,9 +253,7 @@ describe('Post Message Tests', () => {
   );
 
   test('Post webhook successfully', async () => {
-    nock(baseUrl)
-      .post('/success')
-      .reply(200, 'ok');
+    nock(baseUrl).post('/success').reply(200, 'ok');
 
     const res = await Slack.notifyWebhook(
       `${baseUrl}/success`,
@@ -268,11 +266,9 @@ describe('Post Message Tests', () => {
   });
 
   test('Post api successfully', async () => {
-    nock('https://slack.com')
-      .post('/api/chat.postMessage')
-      .reply(200, {
-        ok: true
-      });
+    nock('https://slack.com').post('/api/chat.postMessage').reply(200, {
+      ok: true
+    });
 
     const res = await Slack.notifyApi(`${baseUrl}/success`, {
       text: 'test',
@@ -282,9 +278,7 @@ describe('Post Message Tests', () => {
   });
 
   test('Throw error', async () => {
-    nock(baseUrl)
-      .post('/failure')
-      .reply(404, {error: 'channel_not_found'});
+    nock(baseUrl).post('/failure').reply(404, {error: 'channel_not_found'});
 
     try {
       await Slack.notifyWebhook(
@@ -295,7 +289,7 @@ describe('Post Message Tests', () => {
         payload
       );
     } catch (err) {
-      expect(err.message).toBe('Failed to post message to Slack');
+      expect(err).toHaveProperty('message', 'Failed to post message to Slack');
     }
   });
 });
