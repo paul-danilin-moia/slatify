@@ -5,7 +5,7 @@ export const commonContext = {
   workflow: 'test',
   ref: '1',
   sha: '2',
-  owner: 'lazy-actions',
+  owner: 'moia-oss',
   repo: 'slatify',
   number: 3,
   runId: 55

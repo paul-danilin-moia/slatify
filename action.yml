@@ -1,6 +1,6 @@
 name: 'Slatify'
 description: 'Slack Notification Action'
-author: 'lazy-actions'
+author: 'moia-oss'
 inputs:
   type:
     description: 'job status (success, failure or cancelled)'
