@@ -1,19 +1,18 @@
 # Slatify
 
-![Build](https://img.shields.io/github/workflow/status/lazy-actions/slatify/Build?label=build)
-![Test](https://img.shields.io/github/workflow/status/lazy-actions/slatify/Tests?label=test)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/lazy-actions/slatify?color=brightgreen)
-![GitHub](https://img.shields.io/github/license/lazy-actions/slatify?color=brightgreen)
+![Build](https://img.shields.io/github/workflow/status/moia-oss/slatify/Build?label=build)
+![Test](https://img.shields.io/github/workflow/status/moia-oss/slatify/Tests?label=test)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/moia-oss/slatify?color=brightgreen)
+![GitHub](https://img.shields.io/github/license/moia-oss/slatify?color=brightgreen)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This is Slack Notification Action.
 
 # Announcement
 
-:rotating_light: Transferred repository from homoluctus :rotating_light:
+:rotating_light: Forked repository from lazy-actions :rotating_light:
 
-We don't need to rename from homoluctus/slatify to lazy-actions/slatify in .github/workflow/*.yml.
-You can use as it is, but we recommend renaming it to lazy-actions/slatify.
+Please use moia-oss/slatify action.
 
 # ToC
 
@@ -67,7 +66,7 @@ Please refer to [action.yml](./action.yml) for more details.
 
 ```..github/workflows/example1.yml
 - name: Slack Notification
-  uses: lazy-actions/slatify@master
+  uses: moia-oss/slatify@master
   if: always()
   with:
     type: ${{ job.status }}
@@ -80,7 +79,7 @@ Please refer to [action.yml](./action.yml) for more details.
 
 ```..github/workflows/example2.yml
 - name: Slack Notification
-  uses: lazy-actions/slatify@master
+  uses: moia-oss/slatify@master
   if: always()
   with:
     type: ${{ job.status }}
@@ -103,4 +102,4 @@ Please refer to [action.yml](./action.yml) for more details.
 
 ## LICENSE
 
-[The MIT License (MIT)](https://github.com/lazy-actions/slatify/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/moia-oss/slatify/blob/master/LICENSE)

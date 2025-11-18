@@ -58,8 +58,8 @@ describe('Commit Field Tests', () => {
       url: 'https://this.is.test',
       message: 'this is test',
       author: {
-        url: 'https://lazy-actions',
-        name: 'lazy-actions'
+        url: 'https://moia-oss',
+        name: 'moia-oss'
       }
     };
     const expectedCommitField = [
@@ -101,8 +101,8 @@ describe('Webhook Payload Tests', () => {
       message: 'Hello World\nYEAH!!!!!',
       url: 'https://this.is.test',
       author: {
-        name: 'lazy-actions',
-        url: 'https://lazy-actions'
+        name: 'moia-oss',
+        url: 'https://moia-oss'
       }
     }
   } as const;
@@ -257,7 +257,7 @@ describe('Post Message Tests', () => {
 
     const res = await Slack.notifyWebhook(
       `${baseUrl}/success`,
-      'lazy-actions',
+      'moia-oss',
       'test',
       'pray',
       payload
@@ -272,7 +272,7 @@ describe('Post Message Tests', () => {
 
     const res = await Slack.notifyApi(`${baseUrl}/success`, {
       text: 'test',
-      channel: 'lazy-actions'
+      channel: 'moia-oss'
     });
     expect(res).toBe(undefined);
   });
@@ -283,7 +283,7 @@ describe('Post Message Tests', () => {
     try {
       await Slack.notifyWebhook(
         `${baseUrl}/failure`,
-        'lazy-actions',
+        'moia-oss',
         'test',
         'pray',
         payload
